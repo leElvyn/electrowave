@@ -1,0 +1,146 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://fonts/Cyberpunks.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://fonts/xolonium/Xolonium-Regular.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://fonts/ArialTh.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://scripts/Menu.gd" type="Script" id=4]
+[ext_resource path="res://assets/projectiles/projectileBad.png" type="Texture" id=5]
+[ext_resource path="res://assets/projectiles/projectileGood.png" type="Texture" id=6]
+[ext_resource path="res://assets/wildcard.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 26
+font_data = ExtResource( 1 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=4]
+size = 64
+font_data = ExtResource( 2 )
+
+[sub_resource type="ImageTexture" id=5]
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 3 )
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1023.0
+margin_bottom = 600.0
+color = Color( 0.0784314, 0.00784314, 0.207843, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -240.0
+margin_top = -108.0
+margin_right = 240.0
+margin_bottom = -21.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.819608, 0, 0.807843, 1 )
+text = "ElectroWave"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="how2play" type="Label" parent="."]
+margin_left = 19.4761
+margin_top = 28.9223
+margin_right = 194.476
+margin_bottom = 61.9223
+custom_fonts/font = SubResource( 2 )
+text = "How to play :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="how2play2" type="Label" parent="how2play"]
+margin_left = 200.824
+margin_top = 0.368401
+margin_right = 947.824
+margin_bottom = 93.3684
+custom_fonts/font = SubResource( 2 )
+text = "will be aiming to the center circle. When they're in, hit space.
+ sometimes, projectiles will be      .
+in that c	ase, click them with your mouse to make them green."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Projectile" type="Area2D" parent="how2play" groups=[
+"note",
+]]
+position = Vector2( -32, -30 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="how2play/Projectile"]
+position = Vector2( 211.564, 45.4912 )
+scale = Vector2( 0.04, 0.04 )
+frames = SubResource( 3 )
+
+[node name="Projectile2" type="Area2D" parent="how2play" groups=[
+"note",
+]]
+position = Vector2( -32, -30 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="how2play/Projectile2"]
+position = Vector2( 627.613, 78.4285 )
+scale = Vector2( 0.04, 0.04 )
+frames = SubResource( 3 )
+frame = 1
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -104.0
+margin_top = 58.0
+margin_right = 104.0
+margin_bottom = 142.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.0784314, 0.968627, 0.509804, 1 )
+text = "PLAY"
+icon = SubResource( 5 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 8.3244
+margin_top = 579.144
+margin_right = 303.324
+margin_bottom = 595.144
+custom_fonts/font = SubResource( 6 )
+text = "Made for the Godot Wild Game Jam by elvyn. Music by GAMEDEVBRUH"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 966.826, 535.143 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 7 )
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

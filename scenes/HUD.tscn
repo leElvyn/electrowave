@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://fonts/xolonium/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://fonts/xolonium/Xolonium-Regular.otf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Score" type="Label" parent="."]
+margin_left = 23.9878
+margin_top = 23.6917
+margin_right = 221.988
+margin_bottom = 222.692
+custom_fonts/font = SubResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quality" type="Label" parent="."]
+margin_left = 21.0
+margin_top = 212.326
+margin_right = 170.0
+margin_bottom = 290.326
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

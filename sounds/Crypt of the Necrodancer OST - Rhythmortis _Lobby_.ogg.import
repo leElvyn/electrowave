@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Crypt of the Necrodancer OST - Rhythmortis _Lobby_.ogg-f35e2568872abe4a5f17b3416dc46cd8.oggstr"
+
+[deps]
+
+source_file="res://sounds/Crypt of the Necrodancer OST - Rhythmortis _Lobby_.ogg"
+dest_files=[ "res://.import/Crypt of the Necrodancer OST - Rhythmortis _Lobby_.ogg-f35e2568872abe4a5f17b3416dc46cd8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
